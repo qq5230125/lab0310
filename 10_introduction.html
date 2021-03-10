@@ -6,22 +6,100 @@
     <script src="jquery-ui/jquery-ui.js"></script>
 </head>
 <body>
-    <h1>GO!!!!!!</h1>
-    <img src="img/tara1.png" alt="">
-    <h4>jQuery UI</h4>
-    <p><a href="https://jqueryui.com/">https://jqueryui.com/</a></p>
-    
-    <h4>jQuery UI Downloads </h4>
-    <p><a href="https://jqueryui.com/download/all/">https://jqueryui.com/download/all/</a></p>
 
-    <h4>jQuery UI ThemeRoller</h4>
-    <p><a href="https://jqueryui.com/themeroller/">https://jqueryui.com/themeroller/</a></p>
+    <h4>jQuery Effects - Animation</h4>
+    <p><a
+            href="https://www.w3schools.com/jquery/jquery_animate.asp">https://www.w3schools.com/jquery/jquery_animate.asp</a>
+    </p>
 
-    <h4>jQuery UI Theme Download Builder</h4>
-    <p><a href="https://jqueryui.com/download/">https://jqueryui.com/download/</a></p>
-    
-    <h4>jQuery UI Demos</h4>
-    <p><a href="https://jqueryui.com/demos/">https://jqueryui.com/demos/</a></p>
+    <hr>
 
+    <button id="startMove">start!</button>
+
+    <img id="kutar" src="img/kutar3.png">
+    <img id="navy" src="img/Navy1.png">
+    <img id="pika" src="img/pika2.png">
+    <img id="smoke" src="img/Smoke2.png">
+    <img id="tara" src="img/tara1.png">
+    <img id="teak" src="img/teak2.png">
+
+
+    <script>
+
+        // 10. 先讓圖片可以移動
+        // $(document).ready(function(){
+        //     $('#startMove').on('click', function(){
+        //         $('img').css('position', 'relative').css('left', '100px').css('top', '100px');
+
+        //     })
+        // })
+
+        // 20. 讓圖片移動的數值不固定
+        // $(document).ready(function(){
+        //     $('#startMove').on('click', function(){
+        //         $('img').css('position', 'relative');
+        //         $('img').css('left', '100px');
+        //         $('img').css('top', '100px');
+
+        //     })
+        // })
+
+        // 30. 讓圖片有自己的亂數設定 $().each()
+
+        // $(document).ready(function () {
+        //     $('img').css('position', 'relative');
+        //     $('#startMove').on('click', function () {
+        //         $('img').each((idx, elm) => {
+        //             $(elm).css('top', Math.floor(Math.random() * 300) + 'px');
+        //             $(elm).css('left', Math.floor(Math.random() * 300) + 'px');
+        //         })
+        //         // $('img').each(function () {
+        //         //     $(this).css('top', Math.floor(Math.random() * 300) + 'px');
+        //         //     $(this).css('left', Math.floor(Math.random() * 300) + 'px');
+        //         // })
+
+        //         // $('img').css('top', Math.floor(Math.random() * 300) +'px');
+        //         // $('img').css('left', Math.floor(Math.random() * 300) +'px');
+
+        //     })
+        // })
+
+        // 40. 讓圖片有滑動的效果 $().animate()
+        // $(document).ready(function () {
+        //     $('img').css('position', 'relative');
+        //     $('#startMove').on('click', function () {
+        //         $('img').each(function () {
+        //             $(this).animate({
+        //                 'top': Math.floor(Math.random() * 300) + 'px',
+        //                 'left': Math.floor(Math.random() * 300) + 'px',
+        //             }, 4000)
+        //             // $(this).css('top', Math.floor(Math.random() * 300) +'px');
+        //             // $(this).css('left', Math.floor(Math.random() * 300) +'px');
+        //         })
+        //     })
+        // })
+
+        // 50. 讓圖片自己動起來吧
+
+        $(document).ready(function () {
+            $('img').css('position', 'relative');
+
+            // 方法1: 把按鈕本人藏起來
+            // 方法2: 偵測是不是有計時器啟動中
+            // var flag = 0;
+
+            $('#startMove').on('click', function () {
+                setInterval(function () {
+                    $('img').each(function () {
+                        $(this).animate({
+                            'top': Math.floor(Math.random() * 300) + 'px',
+                            'left': Math.floor(Math.random() * 300) + 'px',
+                        },1000)
+                    })
+                }, 1000)
+            })
+        })
+    </script>
 </body>
+
 </html>
